@@ -1,0 +1,34 @@
+* {
+    margin: 0 0;
+    padding: 0 0
+}
+
+li {
+    list-style: none
+}
+
+.head {
+    width: 50%;
+    height: 100%;
+    color: #ffffff;
+    text-align: center;
+    font-size: 18px;
+    line-height: 100px;
+    float: left;
+}
+
+.ulNav {
+    width: auto;
+    height: 100%;
+    margin-right: 20px;
+    float: right;
+}
+
+.ulNav li{
+    width: 50px;
+    height: 60px;
+    float: left;
+    margin-top: 15px;
+    margin-right: 25px;
+    border: 1px solid blanchedalmond;
+}

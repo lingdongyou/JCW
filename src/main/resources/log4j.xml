@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="appender" class="org.apache.log4j.ConsoleAppender">
+    	<param name="threshold" value="ERROR"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                value="[cmall] %p [%t] %c{1}.%M(%L) | %m%n"/>
+        </layout>
+    </appender>
+    
+      <!--  
+    <appender name="actionAppender" class="org.apache.log4j.DailyRollingFileAppender">
+	  	<param name="File" value="/opt/logs/ActionsError.log"/>
+	  	<param name="Append" value="true"/>
+	  	<param name="threshold" value="INFO"/>
+	  	<param name="DatePattern" value="'.'yyyy-MM-dd'.txt'"/>
+	  	<layout class="org.apache.log4j.PatternLayout">
+	    	<param name="ConversionPattern" value="%d [%t] %p - %m%n"/>
+	  	</layout>
+	</appender>  
+    
+	<category name="com">
+        <priority value="ERROR"/>
+        <appender-ref ref="appender"/>
+    </category>
+  
+    <category name="com.ibatis">
+        <priority value="ERROR"/>
+        <appender-ref ref="appender"/>
+    </category>
+ 
+    </category>
+     -->
+    <category name="com.ibatis">
+        <priority value="DEBUG"/>
+        <appender-ref ref="appender"/>
+    </category>
+    
+    <category name="java.sql">
+        <priority value="DEBUG"/>
+        <appender-ref ref="appender"/>
+    </category>
+    
+    <category name="com">
+        <priority value="DEBUG"/>
+        <appender-ref ref="appender"/>
+    </category>    
+    
+  <!-- 
+    <category name="com">
+        <priority value="DEBUG"/>
+        <appender-ref ref="actionAppender"/>
+    </category>   -->
+         
+    <root>
+    	<level value="ERROR" />
+        <appender-ref ref="appender"/>
+    </root>
+</log4j:configuration>

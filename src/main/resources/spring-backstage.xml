@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+	<context:annotation-config />
+
+	<!-- begin for dao configuration -->
+	<bean id="manageDao" class="com.hkpj.jcw.dao.ManageDaoImpl" scope="singleton" parent="basicDao" />
+	<!-- end for dao configuration -->
+
+	<!-- begin for service configuration -->
+	<bean id="manageService" class="com.hkpj.jcw.service.ManageServiceImpl" scope="singleton" />
+	<!-- end for service configuration -->
+
+	<!-- begin for action configuration -->
+	<bean id="manageAction" class="com.hkpj.jcw.web.backstage.ManageAction" scope="prototype" />
+</beans>
